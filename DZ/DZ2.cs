@@ -1,16 +1,33 @@
 //Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+
 Console.Clear();
-Console.Write("Введите число M:");
-int N = int.Parse(Console.ReadLine()!);
-Console.Write("Введите число N:");
-int M = int.Parse(Console.ReadLine()!);
-if (M > N)
+Console.Write("Введите число M: ");
+int m = int.Parse(Console.ReadLine()!);
+
+Console.Write("Введите число N: ");
+int n = int.Parse(Console.ReadLine()!);
+
+if (m > n)
 {
-    for (int i = N; i <= M; i++)
-    Console.Write($" {i}");
+    Console.WriteLine("Введите M меньше N");
 }
-else
+
+FinalSumm(m, n);
+
+void FinalSumm(int m, int n)
 {
-for (int i = M; i <= N; i++)
-Console.Write($" {i}");
+    Console.Write(Summ(m - 1, n));
+}
+
+int Summ(int m, int n)
+{
+    int res = m;
+    if (m == n)
+        return 0;
+    else
+    {
+        m++;
+        res = m + Summ(m, n);
+        return res;
+    }
 }
