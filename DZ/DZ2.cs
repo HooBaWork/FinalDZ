@@ -7,16 +7,17 @@ int m = int.Parse(Console.ReadLine()!);
 Console.Write("Введите число N: ");
 int n = int.Parse(Console.ReadLine()!);
 
+
 if (m > n)
 {
     Console.WriteLine("Введите M меньше N");
 }
-
 FinalSumm(m, n);
+
 
 void FinalSumm(int m, int n)
 {
-    Console.Write(Summ(m - 1, n));
+    Console.Write("Сумма натуральных элементов в промежутке от " + m + " до " + n + " : " +  Summ(m - 1, n));
 }
 
 int Summ(int m, int n)
